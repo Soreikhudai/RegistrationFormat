@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="bodyMain">
+    
+    <div class="main"> 
+
+    <header class="header1">
+       <h2 class="header2"> Registration Form:</h2>
+    </header>
+    <form  class="form1" onsubmit="addToLocalStorage(event)">
+    <label>Name:</label><br/>
+    <input class= "inputName" type="text" name="username" placeholder="write your name here" required><br/><br/>
+    <label>Email:</label><br/>
+    <input class="inputEmail" type="email" name="emailId" placeholder="your email" required><br/><br/>
+    <label>Phone no:</label><br/>
+    <input  class="inputNumber" type="number" name="phonenumber" placeholder="your phone number" required><br/><br/>
+    <button class="button">submit</button>
+    </form>
+    </div>
+    <script src="main.js"></script>
+    
+</body>
+</html>

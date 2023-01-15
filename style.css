@@ -1,0 +1,108 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: century;
+}
+        .bodyMain {
+           height:100%;
+           width:100%;
+           display:flex;
+           justify-content: center;
+           align-items:center;
+        }
+        .main {
+            height:500px;
+            width:500px;
+            background-color: grey;
+            border: 3px solid black;
+            border-radius: 10px;
+            margin-top: 50px;
+         
+        }
+        .header1 {
+            background-color: black;
+            height: 70px;
+            text-align: center;
+            padding-top:25px;
+
+            
+            
+        }
+        .header2
+        {
+            background-color:black;
+            color: white;
+            
+        }
+        .form1
+        {
+            justify-content: center;
+            align-items:center;
+            padding-left: 155px;
+            margin-top: 30px;
+           
+            
+        }
+        .button {
+            background-color: blue;
+            color:white;
+            border-radius:5px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            padding-left: 6px;
+            padding-right: 6px;
+            font-size: 15px;
+            border: 3px solid rgb(83, 4, 4);
+            transition:opacity 0.15s;
+            transition: background-color 0.1s, color 0.1s;
+            box-shadow: 5px 5px 10px black;
+
+        }
+        .button:hover {
+          background-color: yellow;
+          color:black;
+          font-style:solid;
+          font-weight: bold;
+          transition: background-color 0.1s, color 0.1s;
+          border:3px solid green;
+          transition:opacity 0.15s;
+          
+        }
+        .inputName {
+               border-radius:5px;
+               height:25px;
+               width:200px;
+               border: 3px solid rgb(6, 73, 6);
+               color:blue;
+               box-shadow: 5px 5px 10px black;
+        }
+        .inputName:hover {
+                   border: 3px solid black;
+                   box-shadow: 5px 5px 10px black;
+        }
+        .inputEmail {
+          border-radius:5px;
+          height:25px;
+          width:200px;
+          border: 3px solid green;
+          color:blue;
+          box-shadow: 5px 5px 10px black;
+   }
+   .inputEmail:hover {
+              border: 3px solid black;
+              box-shadow: 5px 5px 10px black;
+   }
+   .inputNumber {
+    border-radius:5px;
+    height:25px;
+    width:200px;
+    border: 3px solid green;
+    color:blue;
+    box-shadow: 5px 5px 10px black;
+}
+.inputNumber:hover {
+        border: 3px solid black;
+        box-shadow: 5px 5px 10px black;
+}
+
+        
