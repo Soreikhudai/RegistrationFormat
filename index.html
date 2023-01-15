@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bodyMain {
+           height:100%;
+           width:100%;
+           display:flex;
+           justify-content: center;
+           align-items:center;
+        }
+        .main {
+            height:500px;
+            width:500px;
+            background-color: grey;
+            border: 3px solid black;
+            border-radius: 5px;
+         
+        }
+        .header1 {
+            background-color: black;
+            height: 70px;
+            padding-top:-50px;
+            
+        }
+        .header2
+        {
+            background-color:black;
+            color: white;
+            padding-left: 170px;
+            padding-top: 20px;
+            
+            
+        }
+        .form1
+        {
+            justify-content: center;
+            align-items:center;
+            padding-left: 160px;;
+        }
+        .button {
+            background-color: blue;
+            color:white;
+            border-radius:3px;
+        }
+
+        
+    </style>
+</head>
+
+<body class="bodyMain">
+    
+    <div class="main"> 
+
+    <header class="header1">
+       <h2 class="header2"> Registration Form:</h2>
+    </header>
+    <form  class="form1" onsubmit="saveToLocalStorage(event)">
+    <label>Name:</label><br/>
+    <input type="text" name="username" required><br/>
+    <label>email:</label><br/>
+    <input type="email" name="emailId" required><br/>
+    <label>Phone no:</label><br/>
+    <input type="tel" name="phonenumber" required><br/><br/>
+    <button class="button">submit</button>
+    </form>
+    </div>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault();
+            const name=event.target.username.value;
+            const email=event.target.emailId.value;
+            const phonenumber=event.target.phonenumber.value;
+            localStorage.setItem('name', name)
+            localStorage.setItem('email', email)
+            localStorage.setItem('phonenumber', phonenumber)
+            
+
+
+        }
+    </script>
+</body>
+</html>
