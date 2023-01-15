@@ -8,9 +8,13 @@ function addToLocalStorage(event){
         email:email,
         phonenumber:phonenumber
     };
-    localStorage.setItem('userDetails', JSON.stringify(obj));
+    localStorage.setItem(obj.email, JSON.stringify(obj));
+    resultInScreen(obj);
+    function resultInScreen(obj){
+        const parentElement= document.getElementById('listOfItems');
+        parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
+
+    }
     
-
-
 
 }
