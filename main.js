@@ -12,9 +12,23 @@ function addToLocalStorage(event){
     resultInScreen(obj);
     function resultInScreen(obj){
         const parentElement= document.getElementById('listOfItems');
-        parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
+        //parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
+      const childElement= document.createElement('li')
+      childElement.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phonenumber;
+
+//detelete element:
+        const deleteButton=document.createElement('input')
+        deleteButton.style.backgroundColor="red";
+        deleteButton.type="button";
+        deleteButton.value="   Delete";
+        deleteButton.onclick = () => {
+            localStorage.removeItem(obj.email)
+            parentElement.removeChild(childElement)
+
+        }
+
+          childElement.appendChild(deleteButton)
+          parentElement.appendChild(childElement)
 
     }
-    
-
 }
