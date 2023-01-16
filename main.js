@@ -12,7 +12,7 @@ function addToLocalStorage(event){
     resultInScreen(obj);
     function resultInScreen(obj){
         const parentElement= document.getElementById('listOfItems');
-        //parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
+       //parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
       const childElement= document.createElement('li')
       childElement.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phonenumber;
 
@@ -26,9 +26,20 @@ function addToLocalStorage(event){
             parentElement.removeChild(childElement)
 
         }
-
-          childElement.appendChild(deleteButton)
+        const editButton = document.createElement('input')
+        editButton.type = "button";
+        editButton.value = "edit";
+        editButton.onclick = () => {
+localStorage.removeItem(obj.email)
+parentElement.removeChild(childElement)
+document.getElementById('usernameInputTag').value =  obj.name
+document.getElementById('emailInputTag').value =  obj.email
+document.getElementById('phoneNumberInputTag').value =  obj.phonenumber
+       
+    }
+    childElement.appendChild(deleteButton)
+          childElement.appendChild(editButton)
           parentElement.appendChild(childElement)
-
+    
     }
 }
