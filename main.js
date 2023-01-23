@@ -1,45 +1,42 @@
-function addToLocalStorage(event){
-    event.preventDefault();
-    const name=event.target.username.value;
-    const email=event.target.emailId.value;
-    const phonenumber=event.target.phonenumber.value;
-    const obj={
-        name: name,
-        email:email,
-        phonenumber:phonenumber
-    };
-    localStorage.setItem(obj.email, JSON.stringify(obj));
-    resultInScreen(obj);
-    function resultInScreen(obj){
-        const parentElement= document.getElementById('listOfItems');
-       //parentElement.innerHTML= parentElement.innerHTML + `<li> ${obj.name} - ${obj.email} - ${obj.phonenumber}</li>`;
-      const childElement= document.createElement('li')
-      childElement.textContent = obj.name + ' - ' + obj.email + ' - ' + obj.phonenumber;
+function save(event){
+event.preventDefault();
+const name=event.target.username.value;
+const email=event.target.emailId.value;
+const phonenumber=event.target.phonenumber.value;
+const obj={
+  name,
+  email,
+  phonenumber
+};
+localStorage.setItem(obj.email, JSON.stringify(obj))
+ displayInScreen(obj);
+ function displayInScreen(obj){
+const parentEle=document.getElementById("listOfItems")
+const childEle=document.createElement("li")
+childEle.textContent= obj.name + ' - ' + obj.email + ' - ' + obj.phonenumber;
+ const deleteBtn=document.createElement("input")
+ deleteBtn.style.backgroundColor="red";
+ deleteBtn.type="button";
+ deleteBtn.value="delete";
+ deleteBtn.onclick=()=>{
+  localStorage.removeItem(obj.email)
+  parentEle.removeChild(childEle)
+ }
+const editBtn= document.createElement("input");
+editBtn.style.backgroundColor="blue";
+editBtn.type="buttom";
+editBtn.value="edit"
+editBtn.onclick=()=>{
+  localStorage.removeItem(obj.email)
+  parentEle.removeChild(childEle)
+  document.getElementById('nameInputTag') .value=obj.name;
+  document.getElementById('emailInputTag') .value=obj.email;
+  document.getElementById('numberInputTag') .value=obj.phonenumber;
 
-//detelete element:
-        const deleteButton=document.createElement('input')
-        deleteButton.style.backgroundColor="red";
-        deleteButton.type="button";
-        deleteButton.value="   Delete";
-        deleteButton.onclick = () => {
-            localStorage.removeItem(obj.email)
-            parentElement.removeChild(childElement)
+}
+ childEle.appendChild(deleteBtn)
+ childEle.appendChild(editBtn)
+parentEle.appendChild(childEle);
+ }
 
-        }
-        const editButton = document.createElement('input')
-        editButton.type = "button";
-        editButton.value = "edit";
-        editButton.onclick = () => {
-localStorage.removeItem(obj.email)
-parentElement.removeChild(childElement)
-document.getElementById('usernameInputTag').value =  obj.name
-document.getElementById('emailInputTag').value =  obj.email
-document.getElementById('phoneNumberInputTag').value =  obj.phonenumber
-       
-    }
-    childElement.appendChild(deleteButton)
-          childElement.appendChild(editButton)
-          parentElement.appendChild(childElement)
-    
-    }
 }
