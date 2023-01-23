@@ -16,16 +16,16 @@
     <header class="header1">
        <h2 class="header2"> Registration Form:</h2>
     </header>
-    <form  class="form1" onsubmit="addToLocalStorage(event)">
+    <form  class="form1" onsubmit="save(event)">
     <label>Name:</label><br/>
-    <input class= "inputName" type="text" name="username" placeholder="write your name here" required><br/><br/>
+    <input id="nameInputTag" class= "inputName" type="text" name="username" placeholder="write your name here" required><br/><br/>
     <label>Email:</label><br/>
-    <input class="inputEmail" type="email" name="emailId" placeholder="your email" required><br/><br/>
+    <input id="emailInputTag" class="inputEmail" type="email" name="emailId" placeholder="your email" required><br/><br/>
     <label>Phone no:</label><br/>
-    <input  class="inputNumber" type="number" name="phonenumber" placeholder="your phone number" required><br/><br/>
+    <input id="numberInputTag" class="inputNumber" type="number" name="phonenumber" placeholder="your phone number" required><br/><br/>
     <button class="button">submit</button>
-    </form><br/><br/><br/><br/><br/><br/><br/><br/>
-    <ul id="listOfItems"></ul> 
+    </form><br/><br/><br/><br/><br/><br/><br/>
+    <ul id="listOfItems"></ul>
     </div>
     <script src="main.js"></script>
     
